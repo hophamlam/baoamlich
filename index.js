@@ -1,11 +1,10 @@
 const cron = require("node-cron");
-const { sendDiscord } = require("./notification");
-console.log("index.js online");
+const { sendDiscord, getTimestamp } = require("./notification");
 
-const userData = require("./data/userData.sample.json");
-const cronSchedule = userData.cronSchedule;
-cron.schedule(cronSchedule, sendDiscord);
-
-// // test cron job every minutes
-// cron.schedule("* * * * *", sendDiscord);
-// console.log("test cron job every minutes");
+const checkEvent = async () => {
+  console.log(getTimestamp() + ": First run");
+  await sendDiscord();
+};
+// First ignite for test run
+checkEvent();
+cron.schedule("0 6 * * *", checkEvent);
