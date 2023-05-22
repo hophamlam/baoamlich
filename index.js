@@ -8,9 +8,9 @@ const checkEvent = async () => {
 // First ignite for test run
 console.log(getTimestamp() + ": First run");
 checkEvent();
-
-const cronSchedule = "0 */3 * * *";
-cron.schedule(cronSchedule, checkEvent);
 console.log(
   getTimestamp() + ": Ignite cron " + cronstrue.toString(cronSchedule) + " "
 );
+
+const cronSchedule = "0 */3 * * *";
+cron.schedule(cronSchedule, checkEvent);
