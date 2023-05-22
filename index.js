@@ -9,7 +9,7 @@ const checkEvent = async () => {
 console.log(getTimestamp() + ": First run");
 checkEvent();
 
-const cronSchedule = "0 */3 * * *";
+const cronSchedule = "0 6,18 * * *";
 cron.schedule(cronSchedule, checkEvent);
 console.log(
   getTimestamp() + ": Ignite cron " + cronstrue.toString(cronSchedule) + " "
