@@ -16,5 +16,7 @@ COPY . .
 # Copy the pre-mounted SQLite database to the appropriate location
 COPY ./data/database.db /app/data/database.db
 
+ENV TZ Asia/Ho_Chi_Minh
+
 # Start the Node.js app
 CMD ["node", "index.js"]
