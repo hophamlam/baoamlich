@@ -17,4 +17,4 @@ jobs:
             cd ~/baolicham
             sudo git pull origin main
             sudo docker build -t baolicham .
-            sudo docker-compose up -d --force-recreate
+            sudo docker-compose up -d --force-recreate --build
